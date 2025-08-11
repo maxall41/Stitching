@@ -1225,22 +1225,6 @@ public class Stitching_Grid implements PlugIn
 		final boolean[] useFile = new boolean[ files.size() ];
 		for ( int i = 0; i < files.size(); ++i )
 			useFile[ i ] = true;
-		
-		if ( confirmFiles )
-		{
-			final GenericDialogPlus gd = new GenericDialogPlus( "Confirm files" );
-			
-			for ( final String name : files )
-				gd.addCheckbox( name, true );
-			
-			gd.showDialog();
-			
-			if ( gd.wasCanceled() )
-				return null;
-			
-			for ( int i = 0; i < files.size(); ++i )
-				useFile[ i ] = gd.getNextBoolean();
-		}
 	
 		final ArrayList< ImageCollectionElement > elements = new ArrayList< ImageCollectionElement >();
 
